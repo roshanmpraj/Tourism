@@ -6,7 +6,6 @@ on:
       - main  # Trigger on push to main branch
 
 jobs:
-
   register-dataset:
     runs-on: ubuntu-latest
     steps:
@@ -17,13 +16,12 @@ jobs:
           python-version: '3.11'
       - name: Install Dependencies
         run: |
-          cd Tourism/deployment
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
       - name: Upload Dataset to Hugging Face Hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python ../model_building/data_register.py
+        run: python model_building/data_register.py
 
   data-prep:
     needs: register-dataset
@@ -36,13 +34,12 @@ jobs:
           python-version: '3.11'
       - name: Install Dependencies
         run: |
-          cd Tourism/deployment
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
       - name: Run Data Preparation
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python ../model_building/prep.py
+        run: python model_building/prep.py
 
   model-training:
     needs: data-prep
@@ -55,7 +52,6 @@ jobs:
           python-version: '3.11'
       - name: Install Dependencies
         run: |
-          cd Tourism/deployment
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
       - name: Start MLflow Server
@@ -65,7 +61,7 @@ jobs:
       - name: Train Model
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python ../model_building/train.py
+        run: python model_building/train.py
 
   deploy-hosting:
     needs: [model-training, data-prep, register-dataset]
@@ -78,10 +74,10 @@ jobs:
           python-version: '3.11'
       - name: Install Dependencies
         run: |
-          cd Tourism/deployment
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
       - name: Deploy to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python hosting.py
+        run: python deployment/hosting.py
+
