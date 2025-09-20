@@ -76,3 +76,4 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python Tourism/deployment/hosting.py
+        #test
