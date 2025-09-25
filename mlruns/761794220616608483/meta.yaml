@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/761794220616608483
+creation_time: 1758817218263
+experiment_id: '761794220616608483'
+last_update_time: 1758817218263
+lifecycle_stage: active
+name: mlops-training-experiment

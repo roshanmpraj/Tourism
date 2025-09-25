@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/761794220616608483/00efde3620774f4a9f72e0baa7efaffe/artifacts
+end_time: 1758817245909
+entry_point_name: ''
+experiment_id: '761794220616608483'
+lifecycle_stage: active
+run_id: 00efde3620774f4a9f72e0baa7efaffe
+run_name: merciful-rook-88
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758817220117
+status: 3
+tags: []
+user_id: root

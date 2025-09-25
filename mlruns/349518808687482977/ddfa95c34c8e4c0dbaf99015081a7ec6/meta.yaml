@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/349518808687482977/ddfa95c34c8e4c0dbaf99015081a7ec6/artifacts
+end_time: 1758816767146
+entry_point_name: ''
+experiment_id: '349518808687482977'
+lifecycle_stage: active
+run_id: ddfa95c34c8e4c0dbaf99015081a7ec6
+run_name: chill-rook-100
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758816738759
+status: 3
+tags: []
+user_id: root
